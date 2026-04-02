@@ -41,7 +41,7 @@ public class JwtAuthenticationFilter implements GlobalFilter, Ordered {
         // Allow public endpoints
         if (isPublicEndpoint(requestPath)) {  // isPublicEndpoint is method below
             return chain.filter(exchange);  // open url[accessible] no token required grant permission
-            // granting permission to the uri to give access
+            // chain = granting permission to the uri to give access
         }
 
         // not public endpont
