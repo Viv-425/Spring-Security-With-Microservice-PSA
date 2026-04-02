@@ -44,6 +44,8 @@ public class JwtAuthenticationFilter implements GlobalFilter, Ordered {
             // granting permission to the uri to give access
         }
 
+        // not public endpont
+        
         String authHeader = exchange.getRequest().getHeaders().getFirst("Authorization"); // JWT Token
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
             exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
